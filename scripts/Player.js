@@ -27,11 +27,10 @@ class Player {
     update(direction){
 
         this.updateDirection(direction);
-        
 
-        //Second last
-        if (centralObject.cells[centralObject.cells.length-2].obstacle == this.direction
-            || centralObject.cells[centralObject.cells.length-1].obstacle == this.direction){
+        //Second last and third last
+        if (centralObject.cells[centralObject.cells.length-3].obstacle == this.direction
+            || centralObject.cells[centralObject.cells.length-2].obstacle == this.direction){
             noLoop();
         }
         else{
