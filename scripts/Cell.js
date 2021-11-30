@@ -33,10 +33,5 @@ class Cell {
         if(this.obstacle != 0)
             fill("#EF3E36");
         rect( this.x + (this.w * this.obstacle), this.y, this.w, this.h);
-        
-        fill(255);
-        textAlign(CENTER, CENTER);
-        text(this.number, this.x+this.w/2, this.y+this.h/2);
-        
     }
 }
