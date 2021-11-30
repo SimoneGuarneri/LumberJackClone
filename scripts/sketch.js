@@ -1,6 +1,13 @@
 const terrainHeigth = 50;
 
-let difficulty = 20;
+//How many points to get to the next difficulty
+const difficultyGap = 50;
+
+//How much the difficulty is gonna increase each time
+//Has to be a divisor of difficultyGap (also .5 count)
+const difficultyStep = difficultyGap/20;
+
+let difficulty = 2;
 
 let player;
 let centralObject;
@@ -34,15 +41,12 @@ function draw(){
     fill(255);
     text(points, 50, 50);
 
-
-    //Each 100Points it will get harder
-    if(points && points % 50 == 0 && difficulty > 5){
-        difficulty -= 2.5;
-    }
+    updateDifficulty();
 }
 
 const drawTerrain = () => {
 
+    stroke(50);
     fill("#009FB7");
     rect(0, height-terrainHeigth, width, terrainHeigth);
 
@@ -55,4 +59,13 @@ function keyPressed() {
     else if (keyCode === RIGHT_ARROW) {
         player.update(1)
     }
-  }
+}
+
+function updateDifficulty(){
+
+    if(points 
+       && points % difficultyGap == 0  
+       && difficulty-1 == (points/difficultyGap))
+           difficulty++;
+}
+

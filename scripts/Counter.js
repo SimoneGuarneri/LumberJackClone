@@ -17,7 +17,7 @@ class Counter{
         if(this.s <= 0)
             noLoop();
 
-        if(frameCount % difficulty == 0)
+        if(frameCount % parseInt(50/difficulty) == 0)
             this.s -= 1;
     }
 

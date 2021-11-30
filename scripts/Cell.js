@@ -24,7 +24,9 @@ class Cell {
     }
 
     display(){
-        
+
+        noStroke();
+
         //Cell
         fill("#009FB7");
         rect(this.x, this.y, this.w, this.h);
