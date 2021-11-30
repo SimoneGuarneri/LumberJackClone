@@ -1,16 +1,22 @@
 const terrainHeigth = 50;
 
+let difficulty = 20;
+
 let player;
 let centralObject;
+let counter;
 
 let points = 0;
 
 function setup(){
     createCanvas(800, 600);
+    
     centralObject = new CentralObject();
     centralObject.init();
+    
     player = new Player();
     
+    counter = new Counter(30);
 }
 
 function draw(){
@@ -22,9 +28,17 @@ function draw(){
     centralObject.display();
     player.display();
 
+    counter.update(difficulty);
+    counter.display();
+
     fill(255);
     text(points, 50, 50);
 
+
+    //Each 100Points it will get harder
+    if(points && points % 50 == 0 && difficulty > 5){
+        difficulty -= 2.5;
+    }
 }
 
 const drawTerrain = () => {

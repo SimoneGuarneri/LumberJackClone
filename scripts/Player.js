@@ -35,6 +35,7 @@ class Player {
         }
         else{
             points++;
+            counter.add(1);
         }
         
         centralObject.update();
