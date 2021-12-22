@@ -22,13 +22,12 @@ function setup(){
     centralObject.init();
     
     player = new Player();
-    
     counter = new Counter(30);
 }
 
 function draw(){
 
-    background("#272727");
+    background("#90e0ef");
     drawTerrain(50);
 
     
@@ -39,6 +38,7 @@ function draw(){
     counter.display();
 
     fill(255);
+    textSize(20)
     text(points, 50, 50);
 
     updateDifficulty();
@@ -47,7 +47,7 @@ function draw(){
 const drawTerrain = () => {
 
     stroke(50);
-    fill("#009FB7");
+    fill("#faedcd");
     rect(0, height-terrainHeigth, width, terrainHeigth);
 
 }

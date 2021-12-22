@@ -25,15 +25,18 @@ class Cell {
 
     display(){
 
-        noStroke();
-
         //Cell
-        fill("#009FB7");
-        rect(this.x, this.y, this.w, this.h);
-
+        strokeWeight(5);
+        stroke("#7f4f24");
+        fill("#582f0e");
+        rect(this.x, this.y, this.w, this.h, 5);
+        
         //Obstacle
-        if(this.obstacle != 0)
-            fill("#EF3E36");
-        rect( this.x + (this.w * this.obstacle), this.y, this.w, this.h);
+        if(this.obstacle != 0){
+            stroke("#004b23");
+            strokeWeight(5);
+            fill("#008000");
+        }
+        rect( this.x + (this.w * this.obstacle), this.y, this.w, this.h, this.obstacle != 0 ? 20 : 5);
     }
 }

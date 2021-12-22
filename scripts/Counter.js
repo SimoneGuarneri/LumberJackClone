@@ -27,12 +27,13 @@ class Counter{
     }
 
     display(){
-
+        
+        stroke(30);
         fill(50);
-        rect(this.x, this.y, this.w, this.h);
+        rect(this.x, this.y, this.w, this.h, 20);
 
         fill("#b5e48c");
-        rect(this.x+5, this.y+3, this.s*(this.w/30) - 10, this.h-6);
+        rect(this.x+5, this.y+3, this.s*(this.w/30) - 10, this.h-6, 20);
 
     }
 
